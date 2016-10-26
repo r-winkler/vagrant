@@ -1,3 +1,6 @@
+!!! This script does unfortunately not work yet. When I subsequently issue all commands in a shell it works fine,
+when vagrant is doing the provisioning, there is a permission error for some reason...
+
 # General
 
 This will setup a VM with default Hubot without any further configuration.
