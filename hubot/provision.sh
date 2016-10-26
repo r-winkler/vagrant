@@ -5,8 +5,8 @@
 apt-get -y update
 apt-get install curl
 
-# only install npm if it is not yet installed (works like this for debian packages)
-dpkg -s npm &>/dev/null || {
+# only install npm if it is not yet installed
+command -v npm &>/dev/null || {
 	# install nodejs v5
 	# http://stackoverflow.com/questions/34974535/install-latest-nodejs-version-in-ubuntu-14-04
 	curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
@@ -18,7 +18,7 @@ dpkg -s npm &>/dev/null || {
 
 # only install hubot if it is not yet installed
 command -v hubot &>/dev/null || {
-	npm install -g hubot-generator yo coffee-script
+	npm install -g generator-hubot yo coffee-script
 	mkdir myhubot
 	cd myhubot
 	yo hubot --defaults
@@ -26,7 +26,7 @@ command -v hubot &>/dev/null || {
 	# custom configuration
 	npm uninstall hubot-heroku-keepalive --save
 	sed -i '/hubot-redis-brain/ d' external-scripts.json
-	sed -i '/hubot-heroku-keepalive/ d' external-scripts.json
-	
-	bin/hubot
+	sed -i '/hubot-heroku-keepalive/ d' external-scripts.json		
 }
+
+bin/hubot
