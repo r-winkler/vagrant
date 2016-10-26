@@ -23,7 +23,5 @@ because the filesystem "vboxsf" is not available. This filesystem is
 made available via the VirtualBox Guest Additions and kernel module.
 Please verify that these guest additions are properly installed in the
 guest. This is not a bug in Vagrant and is usually caused by a faulty
-Vagrant box. For context, the command attempted was:
-
-vagrant plugin install vagrant-vbguest
+Vagrant box.
 
